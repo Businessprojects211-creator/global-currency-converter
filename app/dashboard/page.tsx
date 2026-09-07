@@ -1,0 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { Heart, Trash2 } from "lucide-react";
+
+type Favorite = { from: string; to: string };
+export default function Dashboard() { const [favorites, setFavorites] = useState<Favorite[]>([]); useEffect(() => { setFavorites(JSON.parse(localStorage.getItem("global-convert-favorites") || "[]")); }, []); function remove(pair: Favorite) { const next = favorites.filter((item) => item.from !== pair.from || item.to !== pair.to); setFavorites(next); localStorage.setItem("global-convert-favorites", JSON.stringify(next)); } return <><header className="site-header"><a className="brand" href="/"><span className="brand-mark">↗</span> Global<span>Convert</span></a><a href="/">← Home</a></header><main className="dashboard"><p className="eyebrow">YOUR WORKSPACE</p><h1>Saved pairs.</h1><p className="dashboard-intro">Keep your most-used conversions close. Favorites are stored locally on this device.</p>{favorites.length === 0 ? <section className="empty-workspace"><Heart size={22} /><h2>No saved pairs yet</h2><p>Open a conversion and save it here when favorites are enabled.</p><a href="/">Start converting →</a></section> : <div className="saved-grid">{favorites.map((pair) => <div className="saved-item" key={`${pair.from}-${pair.to}`}><a href={`/convert/${pair.from}/${pair.to}`}><strong>{pair.from} → {pair.to}</strong><small>Open converter</small></a><button aria-label={`Remove ${pair.from} to ${pair.to}`} onClick={() => remove(pair)}><Trash2 size={16} /></button></div>)}</div>}</main></>; }

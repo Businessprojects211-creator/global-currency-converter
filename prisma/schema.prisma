@@ -1,0 +1,72 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  name        String?
+  image       String?
+  role        UserRole @default(USER)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  favorites   FavoriteCurrencyPair[]
+  conversions ConversionHistory[]
+  preference  UserPreference?
+}
+
+model FavoriteCurrencyPair {
+  id        String   @id @default(cuid())
+  userId    String
+  from      String   @db.Char(3)
+  to        String   @db.Char(3)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([userId, from, to])
+  @@index([userId, createdAt])
+}
+
+model ConversionHistory {
+  id        String   @id @default(cuid())
+  userId    String
+  from      String   @db.Char(3)
+  to        String   @db.Char(3)
+  amount    Decimal  @db.Decimal(30, 8)
+  rate      Decimal  @db.Decimal(30, 12)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@index([userId, createdAt])
+}
+
+model UserPreference {
+  id             String  @id @default(cuid())
+  userId         String  @unique
+  defaultFrom    String  @default("USD") @db.Char(3)
+  defaultTo      String  @default("EUR") @db.Char(3)
+  theme          String  @default("system")
+  user           User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model AdvertisementConfig {
+  id        String   @id @default(cuid())
+  slot      String   @unique
+  enabled   Boolean  @default(false)
+  placement String
+  updatedAt DateTime @updatedAt
+}
+
+model SiteSetting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}

@@ -1,0 +1,1 @@
+export default function NotFound() { return <main className="legal"><a className="brand" href="/">↗ Global<span>Convert</span></a><article><p className="eyebrow">CURRENCY DIRECTORY</p><h1>Currency not found</h1><p>That currency code is not in the current catalog.</p><a href="/search">Search currencies →</a></article></main>; }

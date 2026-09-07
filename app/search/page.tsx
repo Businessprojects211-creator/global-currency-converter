@@ -1,0 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { Search } from "lucide-react";
+import { currencies } from "@/lib/currencies";
+
+export default function SearchPage() { const [query, setQuery] = useState(""); const [availableCurrencies, setAvailableCurrencies] = useState(currencies); useEffect(() => { fetch("/api/currencies").then((response) => response.ok ? response.json() : []).then((items) => { if (items.length) setAvailableCurrencies(items); }).catch(() => undefined); }, []); const results = availableCurrencies.filter((currency) => `${currency.code} ${currency.name} ${currency.country}`.toLowerCase().includes(query.toLowerCase())).slice(0, 16); return <><header className="site-header"><a className="brand" href="/"><span className="brand-mark">↗</span> Global<span>Convert</span></a><a href="/">← Home</a></header><main className="search-page"><p className="eyebrow">CURRENCY DIRECTORY</p><h1>Find a currency.</h1><div className="directory-search"><Search size={18} /><input autoFocus placeholder="Search by code, name, or country" value={query} onChange={(event) => setQuery(event.target.value)} /></div><div className="directory-grid">{results.map((currency) => <a href={`/currency/${currency.code.toLowerCase()}`} className="directory-item" key={currency.code}><strong>{currency.code}</strong><span>{currency.name}</span><small>{currency.country}</small></a>)}</div></main></>; }
