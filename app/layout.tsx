@@ -13,7 +13,11 @@ export const metadata: Metadata = {
   description: "Convert currencies instantly with reliable exchange rates and a clear, fast interface.",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.globalfxconverter.com"),
   alternates: { canonical: "/" },
-  icons: { icon: "/icon.svg", shortcut: "/favicon.svg", apple: "/icon.svg" },
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }, { url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
   openGraph: { title: "Global Currency Converter", description: "Fast currency conversion for the world.", type: "website", siteName: "GlobalConvert" },
   twitter: { card: "summary", title: "Global Currency Converter", description: "Fast currency conversion for the world." }
 };
