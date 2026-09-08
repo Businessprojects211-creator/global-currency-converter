@@ -1,3 +1,7 @@
+import { redirect } from "next/navigation";
+export const metadata = { robots: { index: false, follow: true } };
+/* Legacy alias retained only to preserve old links. */
+/*
 const operator = process.env.OPERATOR_NAME || "Global Currency Converter";
 const email = "globalcurrencyconverter01020@gmail.com";
 
@@ -7,7 +11,7 @@ export default function Privacy() {
 		<h2>Information we may collect</h2><p>You may provide your name, email address, and message when contacting us. Our systems, hosting providers, security providers, analytics providers, and advertising partners may automatically process IP address, browser and device type, operating system, language, approximate location, pages visited, referring page, visit time, interactions, cookies, and similar identifiers.</p>
 		<h2>How we use information</h2><p>We may use information to operate conversion tools, provide exchange-rate results, improve performance, respond to enquiries, detect abuse and security incidents, measure advertising, and comply with law.</p>
 		<h2>Currency conversion data</h2><p>Currencies and amounts selected in the public converter may be processed to provide the requested result. An account is not required for ordinary conversions. Requests may be logged temporarily for security, troubleshooting, throttling, and reliability.</p>
-		<h2>Cookies and similar technologies</h2><p>We and our providers may use cookies, local storage, web beacons, pixels, tags, or similar technologies for preferences, functionality, security, analytics, performance, and advertising. See our <a href="/cookie-policy">Cookie Policy</a>.</p>
+		<h2>Cookies and similar technologies</h2><p>We and our providers may use cookies, local storage, web beacons, pixels, tags, or similar technologies for preferences, functionality, security, analytics, performance, and advertising. See our <a href="/cookies">Cookie Policy</a>.</p>
 		<h2>Advertising and Google services</h2><p>When enabled, Google AdSense and other advertising partners may use cookies, web beacons, IP addresses, or identifiers to serve, measure, personalize, limit, and improve advertisements, subject to applicable law and consent requirements. Third parties may place or read cookies or collect information as a result of advertising.</p><p>For more information, see <a href="https://policies.google.com/technologies/partner-sites" rel="noreferrer">How Google uses information from sites or apps that use our services</a>.</p>
 		<h2>Third-party providers and sharing</h2><p>We may use hosting, security, exchange-rate data, analytics, consent, monitoring, and advertising providers. We may share information with those providers, professional advisers, authorities where legally required, or a successor organisation. We do not sell personal information in a manner inconsistent with applicable privacy laws.</p>
 		<h2>Retention, security, and international transfers</h2><p>We retain information only as reasonably necessary for the purposes described here or as required by law. We use reasonable administrative, technical, and organisational safeguards, but no internet transmission or storage method is completely secure. Providers may process information in countries other than your own.</p>
@@ -16,3 +20,5 @@ export default function Privacy() {
 		<h2>Contact</h2><p>Privacy questions can be sent to <a href={`mailto:${email}`}>{email}</a>.</p>
 	</article></main>;
 }
+*/
+export default function PrivacyRedirect() { redirect("/privacy"); }

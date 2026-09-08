@@ -1,0 +1,136 @@
+export type Guide = { slug: string; title: string; description: string; intro: string; sections: { heading: string; paragraphs: string[] }[]; related: string[] };
+
+export const guides: Guide[] = [
+  {
+    slug: "what-is-an-exchange-rate",
+    title: "What Is an Exchange Rate?",
+    description: "Understand what an exchange rate is, how to read it, and why the number can differ from the final amount your bank or provider charges.",
+    intro: "An exchange rate is simply the value of one currency expressed in another currency. If a rate says 1 USD = 3,700 UGX, it means one US dollar is worth 3,700 Ugandan shillings at that reference point. It is the basic number behind every conversion and international payment quote.",
+    sections: [
+      { heading: "How to read a rate", paragraphs: ["Currencies are almost always written as a pair. In USD/UGX, the first currency is the base and the second is the quote. A rate of 1 USD = 3,700 UGX means that one unit of US dollars buys 3,700 Ugandan shillings at the stated rate. If you reverse the pair, the number changes because you are now asking how much one Ugandan shilling is worth in US dollars.", "This is why the direction matters. Converting 100 USD to UGX is not the same as converting 100 UGX to USD, even though both use the same underlying market data. The rate itself reflects the relative value of the two currencies at a moment in time."] },
+      { heading: "Why rates change", paragraphs: ["Exchange rates move because currencies are traded globally and demand changes. Central-bank decisions, inflation, employment data, trade balances, political news, and market sentiment can all affect a currency. If the market expects a currency to strengthen or weaken, the conversion rate will usually move with it.", "For real-world users, this means the rate you see today may not be the same tomorrow. That is normal. It is also why a rate displayed in a calculator is best treated as a reference number, not a guaranteed transaction quote."] },
+      { heading: "Why your provider may quote differently", paragraphs: ["A bank, card issuer, exchange bureau, or money-transfer service usually adds a spread or fee. Their customer rate may be less favourable than the mid-market or reference rate. The final amount you receive could be lower than a simple calculator result suggests, especially when there are delivery, cash-out, or transfer charges.", "The practical lesson is simple: compare the final money received after fees, not just the headline number. A rate can look close to the market rate while still giving a worse result after costs are added."] },
+      { heading: "Common mistakes to avoid", paragraphs: ["A common mistake is treating a displayed rate as a guaranteed price. Another is ignoring the direction of the pair. A low USD/UGX rate is not the same as a high UGX/USD rate, and the exact quote depends on which way the conversion is being evaluated.", "The best approach is to use a live calculator for planning, then confirm the final amount with the provider that will actually execute the transaction. That protects you from surprises caused by fees, margin, and timing."] }
+    ],
+    related: ["how-currency-conversion-works", "what-is-the-mid-market-exchange-rate", "understanding-currency-pairs"]
+  },
+  {
+    slug: "how-currency-conversion-works",
+    title: "How Currency Conversion Works",
+    description: "Learn the basic formula behind a currency conversion and why the reverse direction often produces a different number.",
+    intro: "Most currency conversion is based on a simple calculation: the amount you want to convert is multiplied by the exchange rate for the relevant pair. The key is knowing which currency is the base and which one is the quote.",
+    sections: [
+      { heading: "The basic formula", paragraphs: ["A simple conversion is: amount × rate = converted amount. If 1 USD = 3,700 UGX and you want to convert 50 USD, the reference result is 50 × 3,700 = 185,000 UGX before any provider spread, fee, or rounding.", "The same logic applies to many pairs, including EUR/USD, GBP/UGX, and USD/KES. The main difference is that some pairs are quoted in the opposite direction, so the math may look different to the user even though the underlying rate is the same."] },
+      { heading: "Why the reverse direction matters", paragraphs: ["If a rate says 1 USD = 3,700 UGX, then 1 UGX is not worth 1/3,700 USD in the exact same sense when you include market spread or provider pricing. Because the pair direction changes, the result can look very different even when the underlying market logic is consistent.", "For example, if 1 USD = 3,700 UGX, then 370,000 UGX is roughly 100 USD in a simplified reference example. That is why checking the pair direction is essential before transacting or budgeting on a price."] },
+      { heading: "Rounding and display", paragraphs: ["Rates are often displayed with a manageable number of digits, but the exact rate may be more precise than what is shown. A calculator may show 0.00027 USD per UGX and still be a valid rate, even though it looks tiny. This is why rounding is part of the display layer, not necessarily the real exchange-rate science.", "The result can also differ by a few cents or a few shillings when a provider or bank rounds to the nearest whole unit. For important transfers, the safest approach is to compare the final amount after fees, not just the headline rate."] },
+      { heading: "Practical takeaway", paragraphs: ["A conversion is usually a reference estimate, not an exact final payment amount. The live calculator helps you understand the relationship between the two currencies, and the provider quote tells you what you will actually receive or pay after fees and spread.", "Use the rate to estimate the direction and magnitude of a transaction, then confirm the final number with the provider handling the transfer or exchange."] }
+    ],
+    related: ["what-is-an-exchange-rate", "how-to-convert-usd-to-ugx", "bank-rates-vs-mid-market"]
+  },
+  {
+    slug: "what-is-the-mid-market-exchange-rate",
+    title: "What Is the Mid-Market Exchange Rate?",
+    description: "Learn why the mid-market rate is useful as a benchmark, and why your bank or money-transfer provider may offer a different customer rate.",
+    intro: "The mid-market exchange rate is often described as the midpoint between the buying and selling prices in the foreign-exchange market. It is a useful reference point, but it is not always the rate a customer receives in practice.",
+    sections: [
+      { heading: "Why it matters", paragraphs: ["The mid-market rate is often used as a neutral benchmark for comparing offers. It helps answer a basic question: if there were no spread or fee, what would the exchange rate be between two currencies? That makes it a useful reference even when the actual provider rate is different.", "A rate like 1 USD = 3,700 UGX is often a provider or market reference. A bank may then add a spread and charge a fee, which means the final customer rate ends up different from that reference rate."] },
+      { heading: "How providers make money", paragraphs: ["Providers do not usually give away exchange rate movement for free. They build in a margin, which is sometimes called a spread. The spread is the difference between the rate at which they can buy a currency and the rate at which they sell it to you. In some cases, there is also a fixed fee or percentage-based charge.", "That is why a customer rate and a market reference rate can be very different. The more complex the transfer route, the more likely fees and spreads will reduce the recipient amount."] },
+      { heading: "A practical comparison", paragraphs: ["Imagine two providers quote the same market reference rate but one provider adds a 1% spread and another adds no spread. The final amount received can be meaningfully different even when the headline rate seems similar. For larger transfers, the difference can be expensive.", "This is why a calculator is useful for estimates, but the actual provider quote remains the final word. Always check the delivered amount rather than just the displayed rate before committing to a transfer."] },
+      { heading: "Common misunderstanding", paragraphs: ["Many people assume the rate they see in a conversion tool is exactly what they will receive in a bank or bureau. In most real transactions, it is not. The displayed rate is usually a snapshot or reference value, while the real customer rate includes provider costs and timing assumptions.", "That is not a flaw in the calculator; it is how financial services work. The important thing is to understand the difference between a benchmark and the actual rate on your transaction."] }
+    ],
+    related: ["bank-rates-vs-mid-market", "how-to-convert-usd-to-ugx", "what-is-an-exchange-rate"]
+  },
+  {
+    slug: "why-exchange-rates-change",
+    title: "Why Currency Exchange Rates Change",
+    description: "See the main drivers behind market movements in exchange rates, from inflation to central-bank policy and global uncertainty.",
+    intro: "Exchange rates are not static. They move because supply and demand for currencies change, and market participants react to economic news and expectations. A single rate can move several times in a day depending on what is happening in national and global markets.",
+    sections: [
+      { heading: "Economic and policy factors", paragraphs: ["Inflation, employment data, interest rates, trade balances, and government policy all influence how a currency is valued. If a country raises interest rates, investors may demand that currency more strongly. If inflation stays high, local consumers and businesses may lose purchasing power, which can weaken the currency over time.", "Central banks are often watched carefully because their decisions affect interest rates, liquidity, and market expectations. A rate decision or policy hint can move the value of a currency even before the effect is fully visible in the wider economy."] },
+      { heading: "Supply, demand, and sentiment", paragraphs: ["Currency demand is shaped by trade flows, investment, tourism, remittances, and capital movement. If many people or businesses need a currency, its value may rise. If they sell it aggressively, the value may fall. Market sentiment matters too: confidence, uncertainty, and political risk can trigger large moves in a short period.", "For example, a country with strong export demand may attract more inflows, while geopolitical tension can increase demand for safer or more stable currencies. These moves are not random; they reflect a mix of confidence, risk, and expectations about the future."] },
+      { heading: "Why timing matters", paragraphs: ["When the rate is displayed may matter. A rate quoted in the early morning may not match the quote available in the afternoon. For large transfers or urgent payments, timing can change the final amount materially. This is one reason why institutions often quote updates to customers in real time.", "It also explains why calculator screenshots or historical references are useful for planning but do not replace a current provider quote."] },
+      { heading: "A realistic view", paragraphs: ["Rates can trend gradually or shift sharply. The key point is that exchange rates are dynamic, not fixed. For anyone planning a payment, salary transfer, pension withdrawal, or international purchase, it is wise to compare the current quote against your budget and understand the fee structure before making the transaction."] }
+    ],
+    related: ["what-determines-the-value-of-a-currency", "how-exchange-rates-affect-international-transfers", "what-is-an-exchange-rate"]
+  },
+  {
+    slug: "bank-rates-vs-mid-market",
+    title: "Bank Exchange Rates vs Mid-Market Rates",
+    description: "Understand the difference between a neutral benchmark rate and the actual rate a bank or payment provider may apply.",
+    intro: "A mid-market rate is a comparison benchmark. A bank rate is what a customer is usually offered after fees, spreads, and operating costs are included. Those values are not the same thing.",
+    sections: [
+      { heading: "Mid-market at a glance", paragraphs: ["The mid-market rate is often seen as a reference price between two currencies. It reflects a market midpoint, not necessarily what a customer pays. It is useful for comparisons because it tells you what the underlying market would look like without a commercial margin.", "This is why a calculator can be helpful: it provides a clean reference and allows the user to understand the relationship between two currencies without the noise of bank pricing."] },
+      { heading: "What banks and providers add", paragraphs: ["Banks and transfer providers usually apply a spread to cover operating costs, risk, and profit. The spread can be visible as a lower buying rate, a higher selling rate, or both. On top of that, a service may charge a fixed transfer fee or a percentage fee.", "For international transfers, the final amount received can be materially lower than the reference rate suggests. This is especially common when converting to a currency with lower liquidity or when the payment route involves multiple banks."] },
+      { heading: "Why the final amount matters", paragraphs: ["If you are sending money overseas, the critical question is not only what the headline rate says. The critical question is how much the recipient receives after fees. Two providers may appear similar on paper, but one may offer a better total result because its fee structure is lower.", "For card payments or cash exchanges, the difference can also be attached to network fees, local service fees, or settlement timing. The right comparison is the total amount after all charges are applied."] },
+      { heading: "How to compare offers wisely", paragraphs: ["Ask for the all-in rate, not just the exchange rate. Compare the final amount in the destination currency, the transfer fee, the delivery time, and the total cost. That gives a much clearer comparison than simply looking at the advertised mid-market number."] }
+    ],
+    related: ["what-is-the-mid-market-exchange-rate", "how-exchange-rates-affect-international-transfers", "how-currency-conversion-works"]
+  },
+  {
+    slug: "how-to-convert-usd-to-ugx",
+    title: "How to Convert USD to UGX",
+    description: "Learn how to convert US dollars into Ugandan shillings and why the exact result depends on the live rate and provider fees.",
+    intro: "To convert USD to UGX, you multiply the amount in US dollars by the current USD/UGX rate. Example values help illustrate the logic, but the live rate should always be checked before a transaction.",
+    sections: [
+      { heading: "What the pair means", paragraphs: ["USD/UGX means one US dollar is worth a certain number of Ugandan shillings. If the live reference rate is 3,700 UGX per USD, then 1 USD = 3,700 UGX. If you convert 100 USD, the reference result is approximately 370,000 UGX before any spread or fee.", "For a user planning a payment or exchange, this makes the conversion direction clear: the USD amount is the base and the UGX amount is the quote."] },
+      { heading: "Worked example", paragraphs: ["Suppose you want to send 250 USD to Uganda. If the reference rate is 3,700 UGX per USD, then 250 × 3,700 = 925,000 UGX. That is the reference result before the bank or money-transfer provider adds its margin or transaction fee. In the real world, the final amount can differ because of the provider spread, processing fee, or cash-out arrangements.", "If the provider quotes a slightly worse rate, the recipient may receive less than 925,000 UGX. This is why the final amount matters more than the headline rate."] },
+      { heading: "Why the rate changes", paragraphs: ["The live quote can change throughout the day because market demand shifts and because the provider updates its reference feed. If the rate changes from 3,700 to 3,680, a 250 USD transfer would produce roughly 1,600 UGX less before fees. That may still be acceptable for planning, but it is important to understand the scope of the movement.", "This is also why it is useful to confirm the quote at the moment you are ready to pay or send. Rates are dynamic, and the final settlement may differ from a cached reference value."] },
+      { heading: "A useful rule of thumb", paragraphs: ["Always compare the final amount you will receive after fees. A provider with a slightly better headline rate may still be worse if its fixed fees are higher. That is especially important for international transfers or foreign-currency cash collections."] }
+    ],
+    related: ["how-to-convert-ugx-to-usd", "what-is-an-exchange-rate", "bank-rates-vs-mid-market"]
+  },
+  {
+    slug: "how-to-convert-ugx-to-usd",
+    title: "How to Convert UGX to USD",
+    description: "Learn how to work in reverse and understand the logic behind converting Ugandan shillings into US dollars.",
+    intro: "When converting UGX to USD, you are going in the opposite direction from the earlier example. Instead of multiplying by the quoted rate, you usually divide or use a corresponding inverse rate depending on the provider quote.",
+    sections: [
+      { heading: "Reading the reverse rate", paragraphs: ["If 1 USD = 3,700 UGX, then the inverse relationship is about 1 UGX = 0.00027 USD, before accounting for spread, fees, or rounding. This is a very small number, which is why small currency values can look tiny when displayed. The key is not to treat it as zero when the actual value is non-zero.", "This is exactly the kind of case where a formatting layer matters. A true non-zero rate should not be shown as 0.00 just because it is smaller than one unit of the quote currency."] },
+      { heading: "Worked example", paragraphs: ["Suppose you want to convert 370,000 UGX to USD using a reference rate of 3,700 UGX per USD. The reference result is roughly 100 USD because 370,000 ÷ 3,700 = 100. That number is useful for planning, but a provider may quote a less favourable rate or add fees before the final transfer or exchange occurs.", "This is why many people use a calculator for estimates first, then check the actual provider rate before finalising a transaction."] },
+      { heading: "Common mistakes", paragraphs: ["The main mistake is to assume the reverse conversion is just the same number with a different label. The pair direction changes the math and the displayed quote. Another common problem is paying too much attention to the rounded display and not enough to the real provider offer.", "The best practice is to compare the final amount after fees and confirm exactly what the provider will pay or charge in the destination currency."] },
+      { heading: "A practical note", paragraphs: ["Ugandan shilling values are often large when converted into USD because the UGX unit is small relative to the USD. That does not mean the exchange rate is meaningless or unavailable; it simply means the pair is quoted in a way that produces a small decimal rate in the reverse direction. Accurate formatting matters here."] }
+    ],
+    related: ["how-to-convert-usd-to-ugx", "how-currency-conversion-works", "understanding-currency-pairs"]
+  },
+  {
+    slug: "understanding-currency-pairs",
+    title: "Understanding Currency Pairs",
+    description: "Learn how base and quote currencies work, why direction matters, and how to avoid confusing similar-looking conversions.",
+    intro: "A currency pair compares two currencies and shows the value of one in terms of the other. In practice, that means the direction of the quote matters, and the same two currencies can produce very different numbers depending on which one is being treated as the base.",
+    sections: [
+      { heading: "Base and quote currencies", paragraphs: ["In the pair USD/UGX, USD is the base and UGX is the quote. This means the rate tells you how many Ugandan shillings one US dollar buys. In the pair UGX/USD, the base is UGX and the quote is USD, so the displayed value is different because the perspective has flipped.", "That is why people often say a currency pair is directional. You are not just switching labels; you are changing which currency is being measured against the other."] },
+      { heading: "Examples that matter", paragraphs: ["USD/UGX and UGX/USD are not two ways of saying the same thing. They are two perspectives on the same market relationship. A rate of 3,700 UGX per USD is a very different display from a rate of 0.00027 USD per UGX, even though they describe the same underlying relationship.", "This matters for budgeting, transfer planning, and reporting because a small mistake in the direction can produce a large error in the final result."] },
+      { heading: "Why pair direction can affect decisions", paragraphs: ["If you are paying a supplier in Uganda, you may think in USD/UGX terms. If you are converting local cash back to dollars, you may think in the reverse direction. The direction is important because the same number does not mean the same result in the two cases.", "This is also why calculators and pair pages should be explicit. They should make it obvious which currency is the base and which is the quote before the user decides to convert."] },
+      { heading: "A practical rule", paragraphs: ["Always confirm which side of the pair you are converting from and which side you are converting to. If you are checking the final amount for a payment, choose the pair direction that matches the transaction and then verify the provider quote after fees."] }
+    ],
+    related: ["what-is-an-exchange-rate", "how-to-convert-usd-to-ugx", "how-currency-conversion-works"]
+  },
+  {
+    slug: "how-exchange-rates-affect-international-transfers",
+    title: "How Exchange Rates Affect International Transfers",
+    description: "See how the rate, margin, fee, and timing all affect the amount that actually arrives in the recipient account.",
+    intro: "An international transfer often involves more than a simple currency conversion. The exchange rate is only one part of the total cost. Market spread, bank fees, cash-out costs, and timing can all affect the final amount.",
+    sections: [
+      { heading: "The quote is not always the final settlement", paragraphs: ["A service may quote a reference rate that looks competitive, but the person receiving funds may get a smaller amount because of spread and fees. This happens when providers layer their commercial margin above the market benchmark. For larger transfers, the difference can be substantial.", "A live conversion tool is valuable for estimating what the relationship between two currencies looks like, but it does not replace the final transfer quote from the provider completing the transaction."] },
+      { heading: "What the recipient actually receives", paragraphs: ["When evaluating an international transfer, ask: what will the recipient receive after all fees and exchange-rate adjustments? A provider with a slightly better headline rate may still be worse if it has a hidden fee or less favourable conversion margin.", "This is especially relevant when sending to countries with smaller or more volatile markets, where the difference between a strong quote and a weak quote can be large in absolute terms."] },
+      { heading: "Timing matters too", paragraphs: ["Rates can move between the moment you view a quote and the moment the transfer is executed. That delay can affect the final amount, especially during volatile periods or around major economic announcements. Some services lock a rate for a set period; others use the rate prevailing at settlement.", "Understanding the timing rule helps you decide whether to execute now or wait, but it should never replace the practical need to compare total fees and the actual amount received."] },
+      { heading: "The practical approach", paragraphs: ["The best strategy is to compare total cost, not just the rate. Check the amount sent, the exchange margin, the transfer fee, and the final amount the recipient receives. A rate can look good and still produce a poor total outcome when fees are layered on top."] }
+    ],
+    related: ["bank-rates-vs-mid-market", "why-exchange-rates-change", "how-to-convert-usd-to-ugx"]
+  },
+  {
+    slug: "what-determines-the-value-of-a-currency",
+    title: "What Determines the Value of a Currency?",
+    description: "Discover the main economic, political, and market forces that influence how a currency’s value changes over time.",
+    intro: "A currency’s value is shaped by a mix of economic strength, investor confidence, policy decisions, and supply and demand. No single factor determines it, but a few forces matter much more than others in most cases.",
+    sections: [
+      { heading: "Economic strength and inflation", paragraphs: ["A stronger economy often supports a stronger currency, though the relationship is not automatic. Growth, trade flows, productivity, and stable fiscal conditions can improve confidence. High inflation, however, reduces purchasing power and can weaken a currency over time if investors believe policy is not controlling it.", "This is why inflation and interest-rate policies are often discussed together. A central bank that maintains credibility can sometimes support a currency by signalling stability."] },
+      { heading: "Interest rates and capital flows", paragraphs: ["Interest rates affect the return on saving and investing in a currency. When rates are higher, investors may want to hold that currency because the expected return on local debt and deposits can be more attractive. Lower rates can make a currency less attractive to capital inflows, especially when other markets offer stronger yields.", "Capital flows are important because they can turn a moderate change in expectations into a noticeable move in the exchange rate. The effect may show up quickly in the market because traders react to changing expectations."] },
+      { heading: "Trade, politics, and confidence", paragraphs: ["Trade balances, commodity prices, government stability, and geopolitical events all influence currency value. A country exporting more than it imports may see stronger demand for its currency, while political uncertainty can weaken confidence and lead to more volatility.", "Confidence matters because exchange markets price expectations, not just current conditions. If investors expect a country to face future instability or policy uncertainty, they may reduce demand for its currency even before that risk becomes obvious in the data."] },
+      { heading: "The big picture", paragraphs: ["The value of a currency is not determined by one number alone. It is a function of economic fundamentals, policy action, market sentiment, and the global backdrop. That is why exchange rates often move in response to a mix of local and international news, and why they can shift more quickly than people expect."] }
+    ],
+    related: ["why-exchange-rates-change", "what-is-an-exchange-rate", "understanding-currency-pairs"]
+  }
+];
+
+export function getGuide(slug: string) { return guides.find((guide) => guide.slug === slug); }

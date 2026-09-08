@@ -8,6 +8,6 @@ export default function Contact() {
     <h2>Common reasons to contact us</h2><ul><li>Technical problems or website errors.</li><li>Incorrect or outdated information.</li><li>Questions about conversion calculations.</li><li>Privacy, cookie, advertising, copyright, or intellectual-property concerns.</li><li>General feedback and suggestions.</li></ul>
     <h2>Response time</h2><p>We aim to review legitimate enquiries as reasonably as possible, but response times vary and submitting a message does not guarantee an immediate response.</p>
     <h2>Important notice</h2><p>Do not email bank account numbers, card numbers, passwords, PINs, government identification numbers, or other sensitive financial or security information. We do not provide banking, money-transfer, investment, or personalised financial advisory services through our contact channels.</p>
-    <h2>Privacy</h2><p>Information submitted through our contact channels may be handled according to our <a href="/privacy-policy">Privacy Policy</a>.</p>
+    <h2>Privacy</h2><p>Information submitted through our contact channels may be handled according to our <a href="/privacy">Privacy Policy</a>.</p>
   </article></main>;
 }

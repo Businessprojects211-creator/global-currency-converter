@@ -19,7 +19,7 @@ export default function AdBanner({ slot, className = "" }: AdBannerProps) {
   return <>
     {enabled && client && <Script id="adsense-script" async strategy="afterInteractive" crossOrigin="anonymous" src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${client}`} />}
     <aside className={`ad-slot ${className}`} aria-label="Advertisement" data-ad-slot={slot} data-ads-enabled={enabled}>
-      {enabled && client && slotId ? <ins className="adsbygoogle" style={{ display: "block" }} data-ad-client={client} data-ad-slot={slotId} data-ad-format="auto" data-full-width-responsive="true" /> : enabled ? "Advertisement" : "Ad placement"}
+      {enabled && client && slotId ? <ins className="adsbygoogle" style={{ display: "block" }} data-ad-client={client} data-ad-slot={slotId} data-ad-format="auto" data-full-width-responsive="true" /> : null}
     </aside>
   </>;
 }

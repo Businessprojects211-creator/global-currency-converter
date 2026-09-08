@@ -11,9 +11,11 @@ import PageAdShell from "@/components/ads/PageAdShell";
 export const metadata: Metadata = {
   title: "Global Currency Converter | Provider Exchange Rates",
   description: "Convert currencies instantly with reliable exchange rates and a clear, fast interface.",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.globalfxconverter.com"),
+  alternates: { canonical: "/" },
   icons: { icon: "/icon.svg", shortcut: "/favicon.svg", apple: "/icon.svg" },
-  openGraph: { title: "Global Currency Converter", description: "Fast currency conversion for the world." }
+  openGraph: { title: "Global Currency Converter", description: "Fast currency conversion for the world.", type: "website", siteName: "GlobalConvert" },
+  twitter: { card: "summary", title: "Global Currency Converter", description: "Fast currency conversion for the world." }
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

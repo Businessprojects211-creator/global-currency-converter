@@ -1,0 +1,5 @@
+import Link from "next/link";
+const pairs = [["USD","UGX"],["UGX","USD"],["EUR","UGX"],["GBP","UGX"],["USD","KES"],["USD","TZS"],["USD","NGN"],["EUR","USD"],["GBP","USD"],["USD","CAD"],["USD","AUD"],["USD","ZAR"]];
+export const metadata = { title: "Popular Currency Pairs | GlobalConvert", description: "Browse useful currency pair conversion pages for planning and comparison." };
+export default function PopularPairsPage() { return <><header className="site-header"><Link className="brand" href="/"><span className="brand-mark">↗</span> Global<span>Convert</span></Link><Link href="/#converter">← Converter</Link></header><main className="directory-page"><p className="eyebrow">QUICK START</p><h1>Popular pairs.</h1><p className="directory-intro">Explore practical currency pair pages with an interactive converter and reference guidance.</p><div className="pair-directory-grid">{pairs.map(([from,to]) => <Link className="pair-directory-card" href={`/convert/${from.toLowerCase()}/${to.toLowerCase()}`} key={`${from}-${to}`}><strong>{from} <span>→</span> {to}</strong><small>Open pair converter</small></Link>)}</div></main></>;
+}
