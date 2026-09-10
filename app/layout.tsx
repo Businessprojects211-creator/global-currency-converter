@@ -7,11 +7,12 @@ import "./calculator.css";
 import "./responsive.css";
 import SiteControls from "./site-controls";
 import PageAdShell from "@/components/ads/PageAdShell";
+import { getSiteUrl } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: "Global Currency Converter | Provider Exchange Rates",
   description: "Convert currencies instantly with reliable exchange rates and a clear, fast interface.",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.globalfxconverter.com"),
+  metadataBase: new URL(getSiteUrl()),
   alternates: { canonical: "/" },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }, { url: "/icon.svg", type: "image/svg+xml" }],
