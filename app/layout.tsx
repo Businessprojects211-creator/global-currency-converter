@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import "./controls.css";
 import "./directory.css";
@@ -26,6 +27,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="en">
     <body>
+      <Script
+        id="adsense-script"
+        async
+        strategy="afterInteractive"
+        crossOrigin="anonymous"
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || "ca-pub-2525822081354667"}`}
+      />
       <PageAdShell>{children}</PageAdShell>
       <SiteControls />
       </body></html>;

@@ -15,7 +15,6 @@
   .currency-row { grid-template-columns: minmax(0, 1fr) 35px minmax(0, 1fr); }
   .select-face span { max-width: calc(100% - 10px); }
   .result-actions { flex-wrap: wrap; gap: 10px 16px; }
-  .ad-slot { margin: 45px 20px 52px; }
   .popular { padding: 0 20px 55px; }
   .section-heading { align-items: start; gap: 16px; flex-direction: column; }
   .pair-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -47,11 +46,7 @@
   .chart-controls select { min-width: 0; flex: 1; }
 }
 
-.ad-secondary { margin: 42px auto 42px; }
 .ad-footer { flex-basis: 100%; width: 100%; margin: 0 0 24px; }
-.ad-global { width: min(1180px, calc(100% - 40px)); min-height: 90px; margin: 28px auto; }
-.ad-global-top { margin-top: 12px; }
-.ad-global-bottom { margin-bottom: 12px; }
 .history-card { min-width: 0; max-width: 100%; overflow: hidden; }
 .chart { min-width: 0; max-width: 100%; overflow: hidden; }
 .chart-column { min-width: 0; }
@@ -108,7 +103,6 @@ select option { color: var(--ink); background: var(--card); font-weight: 600; }
 .legal article strong { color: var(--ink); }
 
 @media (max-width: 900px) {
-  .ad-secondary { margin: 34px 0; }
   .legal { padding: 24px 20px 90px; }
   .legal > .brand { margin-bottom: 28px; }
   .legal article { padding: 26px 22px; }
